@@ -11,18 +11,19 @@ class GDGLogo extends CustomPainter {
     var paint = Paint();
     paint.style = PaintingStyle.stroke;
     paint.strokeCap = StrokeCap.round;
-    paint.strokeWidth = 20.0;
+    paint.strokeWidth = 18.0;
 
     final center = Offset(size.width / 2, size.height / 2);
     final hr = center.dx;
     final vr = center.dy;
 
     var path = Path();
+    int gap = 18;
 
     if (time > 0) {
       paint.color = yellow;
       path = Path()
-        ..moveTo(center.dx + 20, center.dy + vr)
+        ..moveTo(center.dx + gap, center.dy + vr)
         ..lineTo(center.dx + hr, center.dy); // Bottom point
       canvas.drawPath(path, paint);
     }
@@ -32,23 +33,23 @@ class GDGLogo extends CustomPainter {
       path = Path();
       path
         ..moveTo(center.dx + hr, center.dy) // Top point
-        ..lineTo(center.dx + 20, center.dy - vr); // Right point
+        ..lineTo(center.dx + gap, center.dy - vr); // Right point
       canvas.drawPath(path, paint);
     }
 
     if (time > 2) {
-      paint.color = blue;
+      paint.color = red;
       path = Path()
-        ..moveTo(center.dx - 20, center.dy - vr)
+        ..moveTo(center.dx - gap, center.dy - vr)
         ..lineTo(center.dx - hr, center.dy); // Bottom point
       canvas.drawPath(path, paint);
     }
 
     if (time > 3) {
-      paint.color = red;
+      paint.color = blue;
       path = Path()
         ..moveTo(center.dx - hr, center.dy)
-        ..lineTo(center.dx - 20, center.dy + vr); // Bottom point
+        ..lineTo(center.dx - gap, center.dy + vr); // Bottom point
       canvas.drawPath(path, paint);
     }
   }

@@ -15,7 +15,7 @@ class _GdgScreenState extends State<GdgScreen> with TickerProviderStateMixin {
   int time = -1;
 
   void initTimer() {
-    timer = Timer.periodic(const Duration(milliseconds: 200), (timer) {
+    timer = Timer.periodic(const Duration(milliseconds: 300), (timer) {
       if (time < 4) {
         setState(() {
           time++;
@@ -38,7 +38,7 @@ class _GdgScreenState extends State<GdgScreen> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Center(
       child: CustomPaint(
-        size: const Size(140, 75),
+        size: const Size(110, 40),
         painter: GDGLogo(time: time),
       ),
     );
